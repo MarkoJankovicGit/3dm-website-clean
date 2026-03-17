@@ -1,7 +1,11 @@
 "use client";
 import ReactLenis, { useLenis } from "lenis/react";
 import { useEffect } from "react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function LenisSmoothScroll() {
   const lenis = useLenis();
@@ -44,7 +48,11 @@ export default function LenisSmoothScroll() {
     const handleRefresh = () => {
       // Small delay to ensure all components are ready
       setTimeout(() => {
-        ScrollTrigger.refresh();
+        try {
+          ScrollTrigger.refresh();
+        } catch (e) {
+          // Silently handle refresh errors
+        }
       }, 100);
     };
 
