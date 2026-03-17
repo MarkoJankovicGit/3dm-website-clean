@@ -61,13 +61,10 @@ export default function LenisSmoothScroll() {
       handleRefresh();
     };
 
-    // Listen for ScrollTrigger refresh events
-    ScrollTrigger.addEventListener("refresh", handleRefresh);
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      ScrollTrigger.removeEventListener("refresh", handleRefresh);
       // Revert scrollerProxy
       ScrollTrigger.scrollerProxy(document.body, {});
       // Reset body overflow
