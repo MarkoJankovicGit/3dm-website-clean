@@ -1,6 +1,6 @@
 "use client";
 import ReactLenis, { useLenis } from "lenis/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,74 +9,79 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function LenisSmoothScroll() {
   const lenis = useLenis();
+  const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
-    if (!lenis) return;
+    setIsIOS(/iPad|iPhone|iPod/.test(navigator.userAgent));
+  }, []);
 
-    // Create scrollerProxy for better ScrollTrigger integration
-    ScrollTrigger.scrollerProxy(document.body, {
-      scrollTop(value) {
-        if (arguments.length && value !== undefined) {
-          lenis.scrollTo(value, { immediate: true });
-        }
-        return lenis.scroll;
-      },
-      scrollLeft(value) {
-        if (arguments.length && value !== undefined) {
-          lenis.scrollTo(value, { immediate: true });
-        }
-        return lenis.scroll;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: document.body.style.transform ? "transform" : "fixed",
-    });
+  useEffect(() => {
+    if (!lenis || isIOS) return;
 
-    // Ensure scrollbar is visible and working
-    document.body.style.overflow = "auto";
+    try {
+      // Create scrollerProxy for better ScrollTrigger integration
+      ScrollTrigger.scrollerProxy(document.body, {
+        scrollTop(value) {
+          if (arguments.length && value !== undefined) {
+            lenis.scrollTo(value, { immediate: true });
+          }
+          return lenis.scroll;
+        },
+        scrollLeft(value) {
+          if (arguments.length && value !== undefined) {
+            lenis.scrollTo(value, { immediate: true });
+          }
+          return lenis.scroll;
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          };
+        },
+        pinType: document.body.style.transform ? "transform" : "fixed",
+      });
 
-    // Update ScrollTrigger when Lenis scrolls
-    lenis.on("scroll", ScrollTrigger.update);
+      // Ensure scrollbar is visible and working
+      document.body.style.overflow = "auto";
 
-    // Centralized refresh handler for all animations
-    const handleRefresh = () => {
-      // Small delay to ensure all components are ready
-      setTimeout(() => {
+      // Update ScrollTrigger when Lenis scrolls
+      lenis.on("scroll", ScrollTrigger.update);
+
+      // Centralized refresh handler for all animations
+      const handleRefresh = () => {
+        setTimeout(() => {
+          try {
+            ScrollTrigger.refresh();
+          } catch (e) {
+            // Silently handle refresh errors
+          }
+        }, 100);
+      };
+
+      // Handle window resize
+      const handleResize = () => {
+        handleRefresh();
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
         try {
-          ScrollTrigger.refresh();
+          ScrollTrigger.scrollerProxy(document.body, {});
         } catch (e) {
-          // Silently handle refresh errors
+          // Silently handle cleanup errors
         }
-      }, 100);
-    };
+        document.body.style.overflow = "";
+      };
+    } catch (e) {
+      // Silently handle initialization errors
+    }
+  }, [lenis, isIOS]);
 
-    // Handle window resize
-    const handleResize = () => {
-      handleRefresh();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      // Revert scrollerProxy
-      ScrollTrigger.scrollerProxy(document.body, {});
-      // Reset body overflow
-      document.body.style.overflow = "";
-    };
-  }, [lenis]);
-  // return null for ios
-  if (
-    typeof window !== "undefined" &&
-    /iPad|iPhone|iPod/.test(navigator.userAgent)
-  ) {
-    return null;
-  }
+  if (isIOS) return null;
   return <ReactLenis root />;
 }
