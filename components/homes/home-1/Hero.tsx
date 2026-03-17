@@ -98,7 +98,7 @@ export default function Hero() {
                 </div>
                 {/* title text */}
                 <h1 className="hero-01-title">
-                  <span className="hero-01-title__row loading__item">
+                  <span className="hero-01-title__row loading__item" style={{ display: "inline-flex", alignItems: "center", flexWrap: "nowrap", whiteSpace: "nowrap" }}>
                     <em className="hero-01-title__item">Build,</em>
                     <em
                       className="hero-01-title__item title-item-transparent"
@@ -106,8 +106,8 @@ export default function Hero() {
                         display: "inline-flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        minWidth: "6ch",
-                        marginLeft: "-0.15em",
+                        minWidth: "420px",
+                        flexShrink: 0,
                       }}
                     >
                       {ROTATING_WORDS[wordIndex]}
