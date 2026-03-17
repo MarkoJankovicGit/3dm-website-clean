@@ -100,7 +100,16 @@ export default function Hero() {
                 <h1 className="hero-01-title">
                   <span className="hero-01-title__row loading__item">
                     <em className="hero-01-title__item">Build,</em>
-                    <em className="hero-01-title__item title-item-transparent">
+                    <em
+                      className="hero-01-title__item title-item-transparent"
+                      style={{
+                        display: "inline-flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        minWidth: "6ch",
+                        marginLeft: "-0.15em",
+                      }}
+                    >
                       {ROTATING_WORDS[wordIndex]}
                     </em>
                   </span>
