@@ -52,7 +52,7 @@ export default function Header1() {
           </AnimatedButton>
         ) : (
           <AnimatedButton
-            text="Say Hello"
+            text="Get in Touch"
             className="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right"
             href="/contact"
           >

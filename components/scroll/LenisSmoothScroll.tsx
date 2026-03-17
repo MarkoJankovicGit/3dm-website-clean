@@ -54,11 +54,14 @@ export default function LenisSmoothScroll() {
       const handleRefresh = () => {
         setTimeout(() => {
           try {
-            ScrollTrigger.refresh();
+            // Check if ScrollTrigger has triggers before refreshing
+            if (ScrollTrigger.getAll && ScrollTrigger.getAll().length > 0) {
+              ScrollTrigger.refresh();
+            }
           } catch (e) {
             // Silently handle refresh errors
           }
-        }, 100);
+        }, 200);
       };
 
       // Handle window resize
