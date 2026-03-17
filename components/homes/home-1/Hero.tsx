@@ -98,7 +98,7 @@ export default function Hero() {
                 </div>
                 {/* title text */}
                 <h1 className="hero-01-title">
-                  <span className="hero-01-title__row loading__item" style={{ display: "inline-flex", alignItems: "center", flexWrap: "nowrap", whiteSpace: "nowrap" }}>
+                  <span className="hero-01-title__row loading__item" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", flexWrap: "nowrap" }}>
                     <em className="hero-01-title__item">Build,</em>
                     <em
                       className="hero-01-title__item title-item-transparent"
