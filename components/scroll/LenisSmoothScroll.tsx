@@ -1,77 +1,47 @@
 "use client";
 import ReactLenis, { useLenis } from "lenis/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 export default function LenisSmoothScroll() {
   const lenis = useLenis();
+  const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
-    if (!lenis) return;
+    setIsIOS(/iPad|iPhone|iPod/.test(navigator.userAgent));
+  }, []);
 
-    // Create scrollerProxy for better ScrollTrigger integration
-    ScrollTrigger.scrollerProxy(document.body, {
-      scrollTop(value) {
-        if (arguments.length && value !== undefined) {
-          lenis.scrollTo(value, { immediate: true });
-        }
-        return lenis.scroll;
-      },
-      scrollLeft(value) {
-        if (arguments.length && value !== undefined) {
-          lenis.scrollTo(value, { immediate: true });
-        }
-        return lenis.scroll;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: document.body.style.transform ? "transform" : "fixed",
-    });
+  useEffect(() => {
+    if (!lenis || isIOS) return;
 
-    // Ensure scrollbar is visible and working
-    document.body.style.overflow = "auto";
-
-    // Update ScrollTrigger when Lenis scrolls
+    // Update ScrollTrigger on every Lenis scroll tick
     lenis.on("scroll", ScrollTrigger.update);
-
-    // Centralized refresh handler for all animations
-    const handleRefresh = () => {
-      // Small delay to ensure all components are ready
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 100);
-    };
 
     // Handle window resize
     const handleResize = () => {
-      handleRefresh();
+      setTimeout(() => {
+        try {
+          if (ScrollTrigger.getAll().length > 0) {
+            ScrollTrigger.refresh();
+          }
+        } catch (e) {
+          // Silently handle refresh errors
+        }
+      }, 200);
     };
 
-    // Listen for ScrollTrigger refresh events
-    ScrollTrigger.addEventListener("refresh", handleRefresh);
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      ScrollTrigger.removeEventListener("refresh", handleRefresh);
-      // Revert scrollerProxy
-      ScrollTrigger.scrollerProxy(document.body, {});
-      // Reset body overflow
-      document.body.style.overflow = "";
+      lenis.off("scroll", ScrollTrigger.update);
     };
-  }, [lenis]);
-  // return null for ios
-  if (
-    typeof window !== "undefined" &&
-    /iPad|iPhone|iPod/.test(navigator.userAgent)
-  ) {
-    return null;
-  }
+  }, [lenis, isIOS]);
+
+  if (isIOS) return null;
   return <ReactLenis root />;
 }

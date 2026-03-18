@@ -41,16 +41,15 @@ export default function About() {
               <div className="col-12 col-xl-7 mxd-grid-item no-margin">
                 <div className="mxd-block__content">
                   <div className="mxd-block__manifest">
-                    <RevealText
-                      as="p"
-                      className="mxd-manifest reveal-type anim-uni-in-up"
-                    >
-                      We are a creative digital agency specializing in
-                      innovative design and cutting-edge development.
-                    </RevealText>
+                  <RevealText
+                    as="p"
+                    className="mxd-manifest reveal-type anim-uni-in-up"
+                  >
+                    We built AI tools for ourselves. Shipped them. Thousands fell in love. Now we know exactly how to build, launch and scale AI products - and we help others do the same.
+                  </RevealText>
                     <div className="mxd-manifest__controls anim-uni-in-up">
                       <AnimatedButton
-                        text="Say Hello"
+                        text="Get in Touch"
                         className="btn btn-anim btn-default btn-outline slide-right-up anim-uni-in-up"
                         href={`/contact`}
                       >

@@ -20,9 +20,6 @@
 
 @import url("./plugins.min.css");
 @import url("./main.min.css");
-html {
-  scroll-behavior: smooth;
-}
 .mxd-nav__wrap {
   display: block;
   pointer-events: none;

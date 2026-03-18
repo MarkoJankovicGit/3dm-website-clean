@@ -125,9 +125,9 @@ export default function MobileMenu() {
                 className="mxd-menu__caption fade-in-elm"
                 style={{ transitionDelay: "0.4s" }}
               >
-                🦄 Innovative design
+                → Product studio
                 <br />
-                and cutting-edge development
+                powered by AI
               </p>
               <div className="main-menu">
                 <nav className="main-menu__content">
@@ -216,9 +216,11 @@ export default function MobileMenu() {
                     className="menu-promo__caption fade-in-elm"
                     style={{ transitionDelay: "0.4s" }}
                   >
-                    👋 New Rayo template is here!
+                    🚀 3DM is live!
                     <br />
-                    Showcase your projects, services and expertise with impact.
+                    The AI product studio
+                    <br />
+                    From idea to launch — we build, scale and ship AI products.
                   </p>
                   <div
                     className="menu-promo__video fade-in-up-elm"
@@ -256,18 +258,7 @@ export default function MobileMenu() {
               style={{ transitionDelay: "0.4s" }}
             >
               <p className="t-xsmall">
-                Made with <i className="ph-fill ph-heart t-additional" /> by{" "}
-                <a
-                  className="no-effect"
-                  href="https://themeforest.net/user/ib-themes/portfolio"
-                  target="_blank"
-                >
-                  ib themes
-                </a>
-              </p>
-              <p className="t-xsmall">
-                <i className="ph ph-copyright" />
-                2025
+                3DM &copy; 2026
               </p>
             </div>
           </div>

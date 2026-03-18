@@ -20,11 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en" className="no-touch">
+    <html suppressHydrationWarning lang="en" className="no-touch" data-scroll-behavior="smooth">
       <head>
         <script dangerouslySetInnerHTML={{ __html: setColorSchemeScript }} />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
