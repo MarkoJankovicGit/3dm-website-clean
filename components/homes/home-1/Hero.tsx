@@ -1,6 +1,5 @@
 import AnimateRotation from "@/components/animation/AnimateRotation";
 import VelocityMarquee from "@/components/animation/VelocityMarquee";
-import VideoModalButton from "@/components/common/VideoModalButton";
 import Image from "next/image";
 
 export default function Hero() {
@@ -227,7 +226,7 @@ export default function Hero() {
                   </ul>
                 </div>
               </div>
-              <div className="mxd-hero-01__video-wrap loading__item">
+              <div className="mxd-hero-01__video-wrap loading__item" style={{ pointerEvents: "none" }}>
                 <video
                   className="mxd-hero-01__video"
                   preload="auto"
@@ -238,9 +237,6 @@ export default function Hero() {
                 >
                   <source type="video/mp4" src="video/3dm_hero_video1.mp4" />
                 </video>
-                <div className="mxd-hero-01__video-btn">
-                  <VideoModalButton videoSrc="https://vimeo.com/65036292" />
-                </div>
               </div>
             </div>
           </div>
