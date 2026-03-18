@@ -17,8 +17,8 @@ export default function Hero() {
                   <div className="hero-01-image image-01 mxd-floating-img__item loading__fade">
                     <Image
                       className="mxd-pulse"
-                      alt="Hero Image"
-                      src="/img/hero/01_hero-img.webp"
+                      alt="Brain heart object"
+                      src="/img/hero/3dm-hero-brain.webp"
                       width={700}
                       height={687}
                       loading="eager"
@@ -27,8 +27,8 @@ export default function Hero() {
                   <div className="hero-01-image image-02 mxd-floating-img__item loading__fade">
                     <Image
                       className="mxd-move"
-                      alt="Hero Image"
-                      src="/img/hero/02_hero-img.webp"
+                      alt="Astronaut helmet"
+                      src="/img/hero/3dm-hero-helmet.webp"
                       width={700}
                       height={798}
                     />
@@ -36,8 +36,8 @@ export default function Hero() {
                   <div className="hero-01-image image-03 mxd-floating-img__item loading__fade">
                     <Image
                       className="mxd-rotate"
-                      alt="Hero Image"
-                      src="/img/hero/03_hero-img.webp"
+                      alt="Metallic sphere"
+                      src="/img/hero/3dm-hero-sphere.webp"
                       width={700}
                       height={704}
                     />
