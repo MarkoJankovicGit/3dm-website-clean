@@ -7547,9 +7547,6 @@ form textarea:required:valid {
     -moz-border-radius: 4.4rem;
     border-radius: 4.4rem;
     color: var(--t-opp-bright);
-    min-width: 620px;
-    text-align: center;
-    justify-content: center;
   }
   .hero-01-title__item.title-item-image {
     display: -webkit-inline-box;
@@ -7568,7 +7565,6 @@ form textarea:required:valid {
     padding: 0 7rem;
     -moz-border-radius: 6.6rem;
     border-radius: 6.6rem;
-    min-width: 800px;
   }
   .hero-01-title__item.title-item-image svg {
     width: 8.5rem;
@@ -7579,7 +7575,6 @@ form textarea:required:valid {
   .hero-01-title__item.title-item-transparent {
     -moz-border-radius: 7.7rem;
     border-radius: 7.7rem;
-    min-width: 920px;
   }
   .hero-01-title__item.title-item-image svg {
     width: 9.2rem;
