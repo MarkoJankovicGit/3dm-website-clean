@@ -1,6 +1,5 @@
 import AnimateRotation from "@/components/animation/AnimateRotation";
 import VelocityMarquee from "@/components/animation/VelocityMarquee";
-import VideoModalButton from "@/components/common/VideoModalButton";
 import Image from "next/image";
 
 export default function Hero() {
@@ -138,20 +137,19 @@ export default function Hero() {
                         </text>
                       </g>
                     </AnimateRotation>
-                    {/* image */}
-                    <Image
-                      className="btn-rotating__image"
-                      alt="Object"
-                      src="/img/icons/300x300_obj-btn-01.webp"
-                      width={300}
-                      height={300}
-                    />
+                  {/* image */}
+                  <Image
+                    className="btn-rotating__image"
+                    alt="3DM Logo"
+                    src="/img/logo-kocka.png"
+                    width={300}
+                    height={300}
+                  />
                   </a>
                 </div>
                 <div className="mxd-hero-01__data-descr loading__fade">
                   <p className="t-bright">
-                    We are a creative digital agency specializing in innovative
-                    design and cutting-edge development.
+                    We are an AI product studio, we build, launch and scale AI-powered products and communities.
                   </p>
                 </div>
                 <div className="mxd-hero-01__data-socials loading__fade">
@@ -175,8 +173,8 @@ export default function Hero() {
                     "
                         />
                       </svg>
-                      <a href="https://dribbble.com/" target="_blank">
-                        Dribbble
+                      <a href="/products">
+                        Products
                       </a>
                     </li>
                     <li>
@@ -198,8 +196,8 @@ export default function Hero() {
                     "
                         />
                       </svg>
-                      <a href="https://www.behance.net/" target="_blank">
-                        Behance
+                      <a href="/services">
+                        Services
                       </a>
                     </li>
                     <li>
@@ -221,28 +219,22 @@ export default function Hero() {
                     "
                         />
                       </svg>
-                      <a href="https://www.instagram.com/" target="_blank">
-                        Instagram
+                      <a href="/contact">
+                        Contact
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
               <div className="mxd-hero-01__video-wrap loading__item">
-                <video
-                  className="mxd-hero-01__video"
-                  preload="auto"
-                  autoPlay
-                  loop
-                  muted
-                  poster="video/540x310_video-01.webp"
-                >
-                  <source type="video/mp4" src="video/540x310_video-01.mp4" />
-                  <source type="video/webm" src="video/540x310_video-01.webm" />
-                  <source type="video/ogv" src="video/540x310_video-01.ogv" />
-                </video>
-                <div className="mxd-hero-01__video-btn">
-                  <VideoModalButton videoSrc="https://vimeo.com/65036292" />
+                <div className="mxd-hero-01__video" style={{ position: "relative", paddingBottom: "57.4%", height: 0, overflow: "hidden", borderRadius: "inherit" }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/DbwKaG9hWdc?autoplay=1&mute=1&loop=1&playlist=DbwKaG9hWdc&controls=0&modestbranding=1&rel=0"
+                    title="3DM Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+                  />
                 </div>
               </div>
             </div>
