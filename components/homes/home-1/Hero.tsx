@@ -49,6 +49,7 @@ export default function Hero() {
                       src="/img/hero/01_hero-img.webp"
                       width={700}
                       height={687}
+                      loading="eager"
                     />
                   </div>
                   <div className="hero-01-image image-02 mxd-floating-img__item loading__fade">
