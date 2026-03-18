@@ -150,8 +150,7 @@ export default function Hero() {
                 </div>
                 <div className="mxd-hero-01__data-descr loading__fade">
                   <p className="t-bright">
-                    We are a creative digital agency specializing in innovative
-                    design and cutting-edge development.
+                    We built AI tools to solve our own problems first. Then something unexpected happened — we shipped them, and thousands of people around the world fell in love with them. That journey gave us something rare: we know firsthand how to build, launch, scale and grow AI products. Now we help others do the same.
                   </p>
                 </div>
                 <div className="mxd-hero-01__data-socials loading__fade">
