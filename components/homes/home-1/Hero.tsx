@@ -3,20 +3,30 @@ import AnimateRotation from "@/components/animation/AnimateRotation";
 import VelocityMarquee from "@/components/animation/VelocityMarquee";
 import VideoModalButton from "@/components/common/VideoModalButton";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ROTATING_WORDS = ["SaaS", "Platforms", "Growth", "Community"];
+// "Community" is the longest word — used to lock the container width
 const MARQUEE_WORDS = ["AI ✦", "Products ✦", "Systems ✦", "Platforms ✦", "Communities ✦"];
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
   const [marqueeIndex, setMarqueeIndex] = useState(0);
+  const [lockedWidth, setLockedWidth] = useState<number | null>(null);
+  const sizerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
     }, 2000);
     return () => clearInterval(interval);
+  }, []);
+
+  // Measure the longest word ("Community") once on mount to lock the container width
+  useEffect(() => {
+    if (sizerRef.current) {
+      setLockedWidth(sizerRef.current.offsetWidth);
+    }
   }, []);
 
   useEffect(() => {
@@ -98,17 +108,33 @@ export default function Hero() {
                 </div>
                 {/* title text */}
                 <h1 className="hero-01-title">
-                  <span className="hero-01-title__row loading__item" style={{ display: "flex", alignItems: "center", flexWrap: "nowrap", whiteSpace: "nowrap" }}>
+                  {/* Hidden sizer: renders "Community" invisibly to measure the max width */}
+                  <em
+                    ref={sizerRef}
+                    className="hero-01-title__item title-item-transparent"
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      visibility: "hidden",
+                      pointerEvents: "none",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Community
+                  </em>
+                  <span
+                    className="hero-01-title__row loading__item"
+                    style={{ display: "flex", alignItems: "center", flexWrap: "nowrap", whiteSpace: "nowrap" }}
+                  >
                     <em className="hero-01-title__item">Build,</em>
                     <em
                       className="hero-01-title__item title-item-transparent"
                       style={{
-                        minWidth: "max-content",
-                        width: "fit-content",
-                        paddingLeft: "7rem",
-                        paddingRight: "7rem",
                         display: "inline-block",
                         textAlign: "center",
+                        width: lockedWidth ? `${lockedWidth}px` : undefined,
+                        minWidth: lockedWidth ? `${lockedWidth}px` : undefined,
+                        flexShrink: 0,
                       }}
                     >
                       {ROTATING_WORDS[wordIndex]}
