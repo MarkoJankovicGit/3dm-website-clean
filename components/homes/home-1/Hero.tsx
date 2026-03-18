@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const ROTATING_WORDS = ["SaaS", "Platforms", "Growth", "Community"];
-const MARQUEE_WORDS = ["AI ✦", "Products ✦", "Systems ✦", "Platforms ✦", "Communities ✦"];
+const MARQUEE_WORDS = ["SaaS ✦", "Platforms ✦", "Growth ✦", "Community ✦"];
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
