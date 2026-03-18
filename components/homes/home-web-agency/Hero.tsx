@@ -112,6 +112,7 @@ export default function Hero() {
                 src="/img/hero/05_hero-img.webp"
                 width={800}
                 height={800}
+                loading="eager"
               />
               <div className="hero-05-worksblock__descr">
                 <p className="t-large t-caption t-bright">
