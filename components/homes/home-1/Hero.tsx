@@ -5,7 +5,7 @@ import VideoModalButton from "@/components/common/VideoModalButton";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const ROTATING_WORDS = ["Products", "Systems", "Platforms", "Communities"];
+const ROTATING_WORDS = ["SaaS", "Platforms", "Growth", "Community"];
 const MARQUEE_WORDS = ["AI ✦", "Products ✦", "Systems ✦", "Platforms ✦", "Communities ✦"];
 
 export default function Hero() {
@@ -98,16 +98,17 @@ export default function Hero() {
                 </div>
                 {/* title text */}
                 <h1 className="hero-01-title">
-                  <span className="hero-01-title__row loading__item" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", flexWrap: "nowrap" }}>
+                  <span className="hero-01-title__row loading__item" style={{ display: "flex", alignItems: "center", flexWrap: "nowrap", whiteSpace: "nowrap" }}>
                     <em className="hero-01-title__item">Build,</em>
                     <em
                       className="hero-01-title__item title-item-transparent"
                       style={{
-                        display: "inline-flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        minWidth: "420px",
-                        flexShrink: 0,
+                        minWidth: "max-content",
+                        width: "fit-content",
+                        paddingLeft: "7rem",
+                        paddingRight: "7rem",
+                        display: "inline-block",
+                        textAlign: "center",
                       }}
                     >
                       {ROTATING_WORDS[wordIndex]}
