@@ -118,10 +118,19 @@
 
 /* Mobile fix for second stats card image (devices-mockup) */
 @media (max-width: 767px) {
-  .mxd-stats-cards-image-2 {
+  .mxd-stats-cards-image-1,
+  .mxd-stats-cards-image-2,
+  .mxd-stats-cards-image-3,
+  .mxd-stats-cards-image-4 {
     min-height: 280px;
   }
-  .mxd-stats-cards-image-2 img {
-    object-position: top center !important;
+  .mxd-stats-cards-image-1 img,
+  .mxd-stats-cards-image-2 img,
+  .mxd-stats-cards-image-3 img,
+  .mxd-stats-cards-image-4 img {
+    object-position: center center !important;
+    object-fit: contain !important;
+    width: 100% !important;
+    height: auto !important;
   }
 }
