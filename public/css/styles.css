@@ -149,4 +149,8 @@
     width: 100% !important;
     height: auto !important;
   }
+  /* Shift fourth card image further upward on mobile */
+  .mxd-stats-cards-image-4 img {
+    object-position: center 10% !important;
+  }
 }
