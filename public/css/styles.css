@@ -125,6 +125,12 @@
 .mxd-stats-cards__item:has(.mxd-stats-cards-image-2) {
   background: transparent !important;
 }
+/* Override bg-base-tint on parent container for second stats card */
+.mxd-stats-cards__item:has(.mxd-stats-cards-image-2) .mxd-stats-cards__inner,
+.mxd-stats-cards__item:has(.mxd-stats-cards-image-2) .bg-base-tint {
+  background: #fff !important;
+  background-color: #fff !important;
+}
 
 /* Mobile fix for second stats card image (devices-mockup) */
 @media (max-width: 767px) {
