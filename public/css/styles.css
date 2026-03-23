@@ -116,9 +116,14 @@
   opacity: 0;
 }
 
-/* Remove background color from second stats card image for clean transparency */
-.mxd-stats-cards-image-2 {
+/* Remove background color from second stats card for clean transparency */
+.mxd-stats-cards-image-2,
+.mxd-stats-cards-image-2.mxd-stats-cards__image {
+  background: transparent !important;
   background-color: transparent !important;
+}
+.mxd-stats-cards__item:has(.mxd-stats-cards-image-2) {
+  background: transparent !important;
 }
 
 /* Mobile fix for second stats card image (devices-mockup) */
