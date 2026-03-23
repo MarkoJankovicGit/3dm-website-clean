@@ -116,6 +116,11 @@
   opacity: 0;
 }
 
+/* Remove background color from second stats card image for clean transparency */
+.mxd-stats-cards-image-2 {
+  background-color: transparent !important;
+}
+
 /* Mobile fix for second stats card image (devices-mockup) */
 @media (max-width: 767px) {
   .mxd-stats-cards-image-1,
