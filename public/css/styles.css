@@ -153,4 +153,25 @@
   .mxd-stats-cards-image-4 img {
     object-position: center 10% !important;
   }
+  /* First stats card mobile readability */
+  #stats-counter-1.mxd-stats-number {
+    font-size: clamp(2rem, 8vw, 4rem) !important;
+    line-height: 1.1 !important;
+    word-break: break-word;
+  }
+  .mxd-stats-cards__inner.bg-accent .mxd-counter__descr {
+    font-size: clamp(0.85rem, 3.5vw, 1rem) !important;
+    line-height: 1.5 !important;
+    word-break: break-word;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+  .mxd-stats-cards__inner.bg-accent .mxd-stats-cards__btngroup {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .mxd-stats-cards__inner.bg-accent .btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
