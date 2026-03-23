@@ -2,10 +2,11 @@
   "projects1": [
     {
       "id": 1,
-      "title": "Creative studio",
-      "description": "template for modern agencies",
+      "title": "DialogueLab",
+      "description": "— All-in-One AI Content Studio. From script to viral video in minutes. Combines AI voiceover, lip-sync, deepfake avatars and timeline editing into one powerful studio for creators and brands.",
+      "link": "https://www.dialoguelab.dev/",
       "previewClass": "preview-image-1",
-      "tags": ["UI/UX", "Web design", "Illustrations"],
+      "tags": ["AI Video", "Voice Synthesis", "Content Creation"],
       "anim": "anim-uni-in-up"
     },
     {
