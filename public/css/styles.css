@@ -128,7 +128,7 @@
   .mxd-stats-cards-image-2 img,
   .mxd-stats-cards-image-3 img,
   .mxd-stats-cards-image-4 img {
-    object-position: center center !important;
+    object-position: center 30% !important;
     object-fit: contain !important;
     width: 100% !important;
     height: auto !important;
