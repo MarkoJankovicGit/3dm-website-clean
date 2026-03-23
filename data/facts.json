@@ -1,14 +1,14 @@
 [
   {
-    "number": 50,
-    "suffix": "+",
-    "description": "Happy clients who\ntrust my work",
+    "number": 2,
+    "suffix": "M+",
+    "description": "Members\nCommunity Built",
     "image": "/img/illustrations/card-image-01.png",
     "imageWidth": 800,
     "imageHeight": 800,
     "button": {
-      "text": "Studio",
-      "href": "/about-us",
+      "text": "Our Work",
+      "href": "/works-simple",
       "iconClass": "ph-bold ph-arrow-up-right",
       "btnClass": "btn btn-anim btn-default btn-outline opposite slide-right-up"
     },
@@ -20,9 +20,9 @@
     "colClass": "col-12 col-xl-5 mxd-stats-cards__item mxd-grid-item anim-uni-scale-in-right"
   },
   {
-    "number": 80,
-    "suffix": "%",
-    "description": "Clients come back for\na new projects",
+    "number": 5,
+    "suffix": "+",
+    "description": "AI Products\nSoftware Development",
     "image": "/img/illustrations/devices-mockup.png",
     "imageWidth": 800,
     "imageHeight": 800,
@@ -49,9 +49,9 @@
     "colClass": "col-12 col-xl-7 mxd-stats-cards__item mxd-grid-item anim-uni-scale-in-left"
   },
   {
-    "number": 5,
+    "number": 10,
     "suffix": "+",
-    "description": "Years of professional experience in designing digital products",
+    "description": "Automations\nAI & Process",
     "image": "/img/illustrations/robot-automation.webp",
     "imageWidth": 800,
     "imageHeight": 800,
@@ -69,9 +69,9 @@
     "colClass": "col-12 col-xl-7 mxd-stats-cards__item mxd-grid-item anim-uni-scale-in-right"
   },
   {
-    "number": 70,
+    "number": 20,
     "suffix": "+",
-    "description": "Successfully\ncompleted projects",
+    "description": "Global Partners\nWorldwide",
     "image": "/img/illustrations/globe-astronaut.png",
     "imageWidth": 800,
     "imageHeight": 800,
