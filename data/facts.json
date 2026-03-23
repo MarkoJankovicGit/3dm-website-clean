@@ -1,14 +1,14 @@
 [
   {
-    "number": 2,
-    "suffix": "M+ Members",
-    "description": "Community Built\n\nWe have built and scaled social media communities across multiple niches — fitness, tech, lifestyle, and business. We know how to grow audiences that convert.",
+    "number": 50,
+    "suffix": "+",
+    "description": "Happy clients who\ntrust my work",
     "image": "/img/illustrations/card-image-01.png",
     "imageWidth": 800,
     "imageHeight": 800,
     "button": {
-      "text": "Community",
-      "href": "/works-simple",
+      "text": "Studio",
+      "href": "/about-us",
       "iconClass": "ph-bold ph-arrow-up-right",
       "btnClass": "btn btn-anim btn-default btn-outline opposite slide-right-up"
     },
