@@ -62,9 +62,32 @@ export default function Projects() {
                           className={`mxd-project-item__media ${project.anim}`}
                           href={project.link || `/project-details`}
                         >
-                          <BackgroundParallax
-                            className={`mxd-project-item__preview ${project.previewClass} parallax-img-small`}
-                          />
+                          {project.videoSrc ? (
+                            <div className={`mxd-project-item__preview ${project.previewClass} parallax-img-small`} style={{ position: 'relative', overflow: 'hidden' }}>
+                              <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                preload="auto"
+                                style={{
+                                  position: 'absolute',
+                                  top: 0,
+                                  left: 0,
+                                  width: '100%',
+                                  height: '100%',
+                                  objectFit: 'cover',
+                                  objectPosition: 'center'
+                                }}
+                              >
+                                <source src={project.videoSrc} type="video/mp4" />
+                              </video>
+                            </div>
+                          ) : (
+                            <BackgroundParallax
+                              className={`mxd-project-item__preview ${project.previewClass} parallax-img-small`}
+                            />
+                          )}
                           <div className="mxd-project-item__tags">
                             {project.tags.map((tag, i) => (
                               <span
