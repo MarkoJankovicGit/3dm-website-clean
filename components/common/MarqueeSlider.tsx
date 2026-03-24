@@ -22,6 +22,7 @@ export default function MarqueeSlider() {
                       src={item.src}
                       width={1200}
                       height={1000}
+                      unoptimized={item.src.endsWith(".png")}
                     />
                   </Link>
                 </div>
@@ -49,6 +50,7 @@ export default function MarqueeSlider() {
                       src={item.src}
                       width={1200}
                       height={1000}
+                      unoptimized={item.src.endsWith(".png")}
                     />
                   </Link>
                 </div>
