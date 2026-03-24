@@ -176,33 +176,25 @@ export default function ServicesStack() {
                 </div>
                 <div className="mxd-services-stack__title width-60">
                   <h3 className="opposite">
-                    Digital marketing
+                    AI Agents &amp;
                     <br />
-                    solutions
+                    Automation
                   </h3>
                 </div>
                 <div className="mxd-services-stack__info width-60">
                   <div className="mxd-services-cards__tags">
                     <span className="tag tag-default tag-outline-opposite">
-                      Strategy
+                      Agents
                     </span>
                     <span className="tag tag-default tag-outline-opposite">
-                      Social media
+                      Workflows
                     </span>
                     <span className="tag tag-default tag-outline-opposite">
-                      SEO
-                    </span>
-                    <span className="tag tag-default tag-outline-opposite">
-                      Optimization
-                    </span>
-                    <span className="tag tag-default tag-outline-opposite">
-                      Campaigns
+                      Integration
                     </span>
                   </div>
                   <p className="t-small-mobile t-opposite">
-                    SEO and content marketing, social media management and paid
-                    campaigns - we help you reach and engage your target
-                    audience effectively.
+                    We design and deploy custom AI agents and automation workflows that eliminate repetitive tasks, connect your tools and run your processes 24/7.
                   </p>
                 </div>
                 <div className="services-stack__image">
