@@ -23,30 +23,22 @@ export default function ServicesStack() {
                   </Link>
                 </div>
                 <div className="mxd-services-stack__title width-60">
-                  <h3 className="opposite">Digital art and graphic design</h3>
+                  <h3 className="opposite">AI Product Development</h3>
                 </div>
                 <div className="mxd-services-stack__info width-60">
                   <div className="mxd-services-cards__tags">
                     <span className="tag tag-default tag-outline-opposite">
-                      UI/UX
+                      SaaS
                     </span>
                     <span className="tag tag-default tag-outline-opposite">
-                      Web design
+                      MVP
                     </span>
                     <span className="tag tag-default tag-outline-opposite">
-                      Packaging
-                    </span>
-                    <span className="tag tag-default tag-outline-opposite">
-                      Motion
-                    </span>
-                    <span className="tag tag-default tag-outline-opposite">
-                      3D models
+                      Full Stack
                     </span>
                   </div>
                   <p className="t-small-mobile t-opposite">
-                    We create visually compelling designs that enhance user
-                    experience. We make sure your brand&apos;s visuals resonate
-                    with your audience.
+                    We design and build AI-powered products from scratch — from idea to launched product. We&apos;ve done it for ourselves and we do it for our partners.
                   </p>
                 </div>
                 <div className="services-stack__image">
