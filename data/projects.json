@@ -12,11 +12,11 @@
     {
       "id": 2,
       "title": "DevQuest",
-      "description": "— Learn to Code Through Epic Quests",
+      "description": "— Forget boring video lectures. DevQuest turns any learning material into bite-sized RPG missions — earn XP, level up, and master any skill in just 5 minutes a day.",
       "link": "https://www.memoized.dev/",
       "previewClass": "preview-image-2",
       "imageSrc": "/img/illustrations/devquest-mockup.png",
-      "tags": ["RPG Learning", "AI", "System Design"],
+      "tags": ["AI Learning", "RPG", "Gamification"],
       "anim": "anim-uni-in-up"
     },
     {
