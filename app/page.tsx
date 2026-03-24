@@ -4,7 +4,6 @@ import Footer2 from "@/components/footers/Footer2";
 
 import About from "@/components/homes/home-1/About";
 import Approch from "@/components/common/Approch";
-import Awards from "@/components/common/Awards";
 
 import Devider from "@/components/homes/home-1/Devider";
 import Facts from "@/components/common/Facts";
@@ -36,7 +35,6 @@ export default function Home() {
         <ServicesStack />
         <Approch />
         <MarqueeSliderClient />
-        <Awards />
         <Testimonials />
         <MarqueeSection2 />
         <Partners />
