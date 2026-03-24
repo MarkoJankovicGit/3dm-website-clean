@@ -132,6 +132,13 @@
   background-color: #fff !important;
 }
 
+/* Featured Projects — 20% taller image preview on mobile */
+@media (max-width: 767px) {
+  .mxd-project-item__preview {
+    height: 552px !important;
+  }
+}
+
 /* Approach & Philosophy — compact row padding on mobile */
 @media (max-width: 767px) {
   .mxd-approach-list__inner {
