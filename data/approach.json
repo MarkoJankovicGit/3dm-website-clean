@@ -1,27 +1,27 @@
 {"approach1":[
   {
-    "title": "Perfection",
-    "description": "From pixel-perfect designs to flawless code, every aspect of our projects is crafted with care to ensure the highest standards of quality.",
+    "title": "Research first, build fast",
+    "description": "Every idea starts with genuine curiosity — we study the space, look for what's missing, then move immediately. No endless planning.",
     "icon": "/img/icons/h70_appr-01.webp"
   },
   {
-    "title": "Innovative",
-    "description": "We stay ahead of design trends, offering modern and visually impactful solutions that set your brand apart.",
+    "title": "Solve small things brilliantly",
+    "description": "AI won't fix everything. But it can make one hard thing effortless. We chase that — not the hype, not the headlines.",
     "icon": "/img/icons/h70_appr-02.webp"
   },
   {
-    "title": "Expertise",
-    "description": "We are passionate about integrating the latest technologies and trends, including interactive animations and mobile-first strategies.",
+    "title": "Innovation is always worth it",
+    "description": "If it simplifies something complex, it's worth building. The world is full of broken processes waiting for a smarter solution.",
     "icon": "/img/icons/h70_appr-03.webp"
   },
   {
-    "title": "Full-Cycle services",
-    "description": "From web design to development, branding, SEO, and UX/UI, we provide a full range of services that cover all your digital needs.",
+    "title": "Validate early, validate fast",
+    "description": "A great product is one users confirm in the market — not one we fall in love with in a doc. Real signal beats internal conviction every time.",
     "icon": "/img/icons/h70_appr-04.webp"
   },
   {
-    "title": "Client Success",
-    "description": "Our clients consistently see improved engagement, conversion rates, and business growth.",
+    "title": "Own your stack, own your future",
+    "description": "Most AI products collapse because they're built on top of expensive commercial models with no exit. We build lean, independent, and sustainable from day one.",
     "icon": "/img/icons/h70_appr-05.webp"
   }
 ]
