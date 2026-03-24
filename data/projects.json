@@ -21,11 +21,12 @@
     },
     {
       "id": 3,
-      "title": "Mobile app design",
-      "description": "for a cross-platform solution",
+      "title": "InfluenceGen",
+      "description": "— Upload a photo and a script — InfluenceGen generates studio-quality talking-head videos with your voice, captions and brand look. Built for elite creators who want to dominate their niche.",
+      "link": "https://influence-gen.vercel.app/",
       "previewClass": "preview-image-3",
       "imageSrc": "/img/illustrations/influencegen-mockup.png",
-      "tags": ["UI/UX", "Design", "Android"],
+      "tags": ["AI Video", "Talking Head", "Content Automation"],
       "anim": ""
     },
     {
