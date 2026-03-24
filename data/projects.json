@@ -31,11 +31,12 @@
     },
     {
       "id": 4,
-      "title": "NFT project",
-      "description": "branding",
+      "title": "EduGen",
+      "description": "— Transform Any Topic Into Bite-Sized AI Learning Experiences — EduGen orchestrates multiple AI models to mass-produce microlearning content — videos, visuals and lessons in minutes. From raw material to complete educational experience at scale.",
+      "link": "https://edu-gen-blond.vercel.app/",
       "previewClass": "preview-image-4",
       "imageSrc": "/img/illustrations/edugen-mockup.png",
-      "tags": ["Brand identity", "Style guides"],
+      "tags": ["AI Learning", "Microlearning", "Content Generation"],
       "anim": "anim-uni-in-up"
     },
     {
