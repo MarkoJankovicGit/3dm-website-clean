@@ -15,7 +15,6 @@ export default function ScrollTop() {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    // run once to set initial state
     onScroll();
 
     return () => window.removeEventListener("scroll", onScroll);
@@ -24,10 +23,8 @@ export default function ScrollTop() {
   const handleScrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
     if (lenis) {
-      // Use Lenis smooth scroll
       lenis.scrollTo(0, { immediate: false, duration: 1.5 });
     } else if (typeof window !== "undefined") {
-      // Fallback to native smooth scroll
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
@@ -43,6 +40,7 @@ export default function ScrollTop() {
         visibility: visible ? "inherit" : "hidden",
         pointerEvents: visible ? "auto" : "none",
       }}
+      suppressHydrationWarning
     >
       <i className="ph ph-arrow-up" />
     </a>

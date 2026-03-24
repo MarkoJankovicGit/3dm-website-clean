@@ -4,6 +4,9 @@ import socials from "@/data/socials.json";
 import AnimatedButton from "../animation/AnimatedButton";
 import SubscribeForm from "./SubscribeForm";
 
+// Hardcoded year to prevent hydration mismatch
+const CURRENT_YEAR = 2026;
+
 export default function Footer2({ text = "rayosttudio" }: { text?: string }) {
   return (
     <footer id="mxd-footer" className="mxd-footer">
@@ -298,7 +301,7 @@ export default function Footer2({ text = "rayosttudio" }: { text?: string }) {
                   ib themes
                 </a>
                 <i className="ph-bold ph-copyright" />
-                {new Date().getFullYear()}
+                {CURRENT_YEAR}
               </p>
             </div>
           </div>

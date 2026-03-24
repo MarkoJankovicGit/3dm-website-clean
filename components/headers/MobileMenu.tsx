@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import menuItems from "@/data/menu.json"; // adjust path accordingly
+import menuItems from "@/data/menu.json";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import gsap from "gsap";
 import Flip from "gsap/Flip";
@@ -17,41 +17,30 @@ export default function MobileMenu() {
   const [isActive, setIsActive] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(-1);
   const submenuRefs = useRef<(HTMLUListElement | null)[]>([]);
-  // refs for the two *containers* the element will move between
-  const hamburgerBtnRef = useRef<HTMLAnchorElement | null>(null); // .mxd-nav__hamburger
-  const menuContainRef = useRef<HTMLDivElement | null>(null); // .mxd-menu__contain
+  const hamburgerBtnRef = useRef<HTMLAnchorElement | null>(null);
+  const menuContainRef = useRef<HTMLDivElement | null>(null);
+  const flipBaseRef = useRef<HTMLDivElement | null>(null);
 
-  // the single element that flips between the two containers
-  const flipBaseRef = useRef<HTMLDivElement | null>(null); // .hamburger__base
-
-  // Store scrollHeight values
   const [submenuHeights, setSubmenuHeights] = useState<number[]>([]);
+  
   const handleToggle = () => {
     if (isActive) {
       setIsActive(false);
-      setTimeout(
-        () => {
-          setIsMenuOpen(false);
-        },
-
-        800
-      );
+      setTimeout(() => {
+        setIsMenuOpen(false);
+      }, 800);
     } else {
       setIsMenuOpen(true);
-      setTimeout(
-        () => {
-          setIsActive(true);
-        },
-
-        600
-      );
+      setTimeout(() => {
+        setIsActive(true);
+      }, 600);
     }
   };
+  
   const isMenuActive = (link?: string) =>
     link?.split("/")[1] == pathname.split("/")[1];
 
   useEffect(() => {
-    // Get scrollHeight for each submenu and store in state
     const heights = submenuRefs.current.map((submenu) =>
       submenu ? submenu.scrollHeight : 0
     );
@@ -66,33 +55,32 @@ export default function MobileMenu() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
-  // === FLIP ONLY on state change ===
-  useLayoutEffect(() => {
+  // Changed from useLayoutEffect to useEffect
+  useEffect(() => {
     const flipEl = flipBaseRef.current;
     const toMenu = isMenuOpen;
 
     if (!flipEl || !hamburgerBtnRef.current || !menuContainRef.current) return;
 
-    // Capture current position/sizes before DOM move
     const state = Flip.getState(flipEl);
 
-    // Move the node to its new container
     if (toMenu) {
       menuContainRef.current.appendChild(flipEl);
     } else {
       hamburgerBtnRef.current.appendChild(flipEl);
     }
 
-    // Animate from previous to new layout
     Flip.from(state, {
       duration: 0.8,
       ease: "power4.inOut",
     });
   }, [isMenuOpen]);
+  
   return (
     <nav
       className={`mxd-nav__wrap  ${isActive ? "active_menu" : ""} `}
       data-lenis-prevent=""
+      suppressHydrationWarning
     >
       {/* Hamburger Start */}
       <div className="mxd-nav__contain loading__fade">
@@ -216,7 +204,7 @@ export default function MobileMenu() {
                     className="menu-promo__caption fade-in-elm"
                     style={{ transitionDelay: "0.4s" }}
                   >
-                    🚀 3DM is live!
+                    3DM is live!
                     <br />
                     The AI product studio
                     <br />

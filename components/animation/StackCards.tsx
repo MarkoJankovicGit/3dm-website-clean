@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  useLayoutEffect,
   useEffect,
   useRef,
   Children,
@@ -14,17 +13,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 type StackCardsProps = {
   className?: string;
-  /** Content rendered above the stack; its height extends the scroll distance */
   offset?: React.ReactNode;
-  /** Pin the wrapper during the effect */
-  pin?: boolean; // default: true
-  /** ScrollTrigger scrub value */
-  scrub?: boolean | number; // default: true
-  /** Duration multiplier used like index * durationMul */
-  durationMul?: number; // default: 0.5
-  /** Cards to stack (each child becomes one card) */
+  pin?: boolean;
+  scrub?: boolean | number;
+  durationMul?: number;
   children: React.ReactNode;
-  stackName?: string; // default: "services-stack"
+  stackName?: string;
 };
 
 export default function StackCards({
@@ -38,16 +32,14 @@ export default function StackCards({
 }: StackCardsProps) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const offsetRef = useRef<HTMLDivElement | null>(null);
-
-  // stable refs by index (don’t push in render)
   const itemRefs = useRef<HTMLElement[]>([]);
 
-  useLayoutEffect(() => {
+  // Changed from useLayoutEffect to useEffect
+  useEffect(() => {
     if (typeof window === "undefined") return;
     const wrapper = wrapperRef.current;
     const offsetEl = offsetRef.current;
 
-    // collect current items
     const items = itemRefs.current.filter(Boolean);
     if (!wrapper || items.length === 0) return;
 
@@ -55,14 +47,11 @@ export default function StackCards({
     let st: ScrollTrigger | null = null;
 
     const initCards = () => {
-      // safety: kill previous
       st?.kill();
       tl?.kill();
 
-      // clear previous transforms/styles before measuring
       gsap.set(items, { clearProps: "transform" });
 
-      // measure AFTER clearing transforms
       const first = items[0];
       const cardHeight =
         first.getBoundingClientRect().height || first.offsetHeight;
@@ -71,9 +60,7 @@ export default function StackCards({
 
       items.forEach((card, index) => {
         if (index > 0) {
-          // place each below the previous by full height
           gsap.set(card, { y: index * cardHeight, willChange: "transform" });
-          // animate each to y:0; later cards take longer (stack effect)
           tl!.to(card, { y: 0, duration: index * durationMul }, 0);
         }
       });
@@ -86,37 +73,28 @@ export default function StackCards({
         anticipatePin: 1,
         end: () => {
           const extra = offsetEl?.offsetHeight ?? 0;
-          // scroll distance = stack travel + any offset block height
           return `+=${items.length * cardHeight + extra}`;
         },
         scrub,
         animation: tl!,
         invalidateOnRefresh: true,
-        // markers: true,
       });
     };
 
     const ctx = gsap.context(() => {
-      // Save original styles so refresh/revert won’t leave artifacts
       ScrollTrigger.saveStyles(items);
       initCards();
-
-      // When ScrollTrigger refreshes (resize, font load, etc.), rebuild with fresh measurements
-      // ScrollTrigger.addEventListener("refreshInit", initCards);
     }, wrapper);
 
     return () => {
-      // ScrollTrigger.removeEventListener("refreshInit", initCards);
       st?.kill();
       tl?.kill();
       ctx.revert();
     };
   }, [pin, scrub, durationMul, children]);
 
-  // Ensure we refresh once after images/fonts load (critical for reload-at-section)
   useEffect(() => {
     const onLoad = () => {
-      // Next tick helps when the browser restores scroll first
       requestAnimationFrame(() => ScrollTrigger.refresh());
     };
     if (document.readyState === "complete") {
@@ -127,7 +105,6 @@ export default function StackCards({
     return () => window.removeEventListener("load", onLoad);
   }, []);
 
-  // Render children with index-stable refs
   const wrappedChildren = Children.map(children, (child, index) => {
     const content = isValidElement(child) ? child : <>{child}</>;
     return (
@@ -144,13 +121,10 @@ export default function StackCards({
   });
 
   return (
-    <div ref={wrapperRef} className={className}>
-      {/* Offset block rendered BEFORE the cards (now actually using the prop) */}
+    <div ref={wrapperRef} className={className} suppressHydrationWarning>
       <div className="stack-offset" ref={offsetRef}>
         {offset}
       </div>
-
-      {/* Cards */}
       <div className={stackName}>{wrappedChildren}</div>
     </div>
   );

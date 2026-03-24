@@ -1,15 +1,16 @@
 "use client";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+
 interface ParallaxItemProps {
-  /** Parallax speed; 0 = static, 1 = same as scroll, <1 = slower than scroll, >1 = faster than scroll */
-  speed?: number; // default: 0.5
+  speed?: number;
   children: React.ReactNode;
   className?: string;
 }
+
 export default function ParallaxItem({
   speed = 0.5,
   children,
@@ -17,7 +18,8 @@ export default function ParallaxItem({
 }: ParallaxItemProps) {
   const el = useRef(null);
 
-  useLayoutEffect(() => {
+  // Changed from useLayoutEffect to useEffect
+  useEffect(() => {
     if (!el.current) return;
 
     const ctx = gsap.context(() => {
@@ -39,7 +41,7 @@ export default function ParallaxItem({
   }, [speed]);
 
   return (
-    <div ref={el} className={className}>
+    <div ref={el} className={className} suppressHydrationWarning>
       {children}
     </div>
   );
