@@ -132,6 +132,13 @@
   background-color: #fff !important;
 }
 
+/* Approach & Philosophy — compact row padding on mobile */
+@media (max-width: 767px) {
+  .mxd-approach-list__inner {
+    padding: 3.5rem 0;
+  }
+}
+
 /* Mobile fix for second stats card image (devices-mockup) */
 @media (max-width: 767px) {
   .mxd-stats-cards-image-1,
