@@ -102,14 +102,14 @@ export default function ServicesStack() {
                   <Image
                     className="service-img service-img-s"
                     alt="Service/Feature Image"
-                    src="/img/services/800x800_ser-02.webp"
+                    src="/img/illustrations/chrome-cubes-3d.webp"
                     width={800}
                     height={800}
                   />
                   <Image
                     className="service-img service-img-m"
                     alt="Service/Feature Image"
-                    src="/img/services/1000x1000_ser-02.webp"
+                    src="/img/illustrations/chrome-cubes-3d.webp"
                     width={1000}
                     height={1000}
                   />
