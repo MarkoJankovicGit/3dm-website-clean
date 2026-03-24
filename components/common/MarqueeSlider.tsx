@@ -43,8 +43,8 @@ export default function MarqueeSlider() {
               </React.Fragment>
             ))}
           </VelocityMarquee>
-          {/* bottom line */}
-          <VelocityMarquee direction="right" className="marquee marquee--gsap">
+          {/* bottom line - hidden */}
+          {/* <VelocityMarquee direction="right" className="marquee marquee--gsap">
             {projects7.map((item, idx) => (
               <React.Fragment key={idx}>
                 <div className="marquee__item image">
@@ -62,7 +62,6 @@ export default function MarqueeSlider() {
                     />
                   </Link>
                 </div>
-                {/* item */}
                 {item.title && (
                   <div className="marquee__item has-caption padding-4">
                     <p>
@@ -74,7 +73,7 @@ export default function MarqueeSlider() {
                 )}
               </React.Fragment>
             ))}
-          </VelocityMarquee>
+          </VelocityMarquee> */}
         </div>
         {/* Block - Marquee Images Two Lines End */}
       </div>
