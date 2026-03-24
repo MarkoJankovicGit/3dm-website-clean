@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -27,21 +27,15 @@ export default function VelocityMarquee({
 }: VelocityMarqueeProps) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
-  const [isMounted, setIsMounted] = useState(false);
 
-  // ✅ left should be NEGATIVE, right should be POSITIVE
+  // left should be NEGATIVE, right should be POSITIVE
   const dirDelta = useMemo(
     () => (direction === "left" ? "-=50%" : "+=50%"),
     [direction]
   );
 
-  // Handle hydration - only render duplicated children after mount
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === "undefined" || !isMounted) return;
+    if (typeof window === "undefined") return;
 
     const wrap = wrapRef.current;
     const track = trackRef.current;
@@ -106,10 +100,15 @@ export default function VelocityMarquee({
       master?.kill();
       ctx.revert();
     };
-  }, [dirDelta, direction, duration, minScale, maxScale, pauseOnHover, isMounted]);
+  }, [dirDelta, direction, duration, minScale, maxScale, pauseOnHover]);
 
   return (
-    <div ref={wrapRef} className={className} style={{ overflow: "hidden" }}>
+    <div 
+      ref={wrapRef} 
+      className={className} 
+      style={{ overflow: "hidden" }}
+      suppressHydrationWarning
+    >
       <div
         ref={trackRef}
         className="marquee-flex"
@@ -118,9 +117,10 @@ export default function VelocityMarquee({
           whiteSpace: "nowrap",
           willChange: "transform",
         }}
+        suppressHydrationWarning
       >
         {children}
-        {isMounted && children}
+        {children}
       </div>
     </div>
   );

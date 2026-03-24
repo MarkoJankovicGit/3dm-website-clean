@@ -11,7 +11,7 @@ import Facts from "@/components/common/Facts";
 import Hero from "@/components/homes/home-1/Hero";
 import Marquee from "@/components/homes/home-1/Marquee";
 import MarqueeSection2 from "@/components/homes/home-1/MarqueeSection2";
-import MarqueeSlider from "@/components/common/MarqueeSlider";
+import MarqueeSliderClient from "@/components/common/MarqueeSliderClient";
 import Partners from "@/components/homes/home-1/Partners";
 import Projects from "@/components/homes/home-1/Projects";
 import ServicesStack from "@/components/homes/home-1/ServicesStack";
@@ -35,7 +35,7 @@ export default function Home() {
         <Projects />
         <ServicesStack />
         <Approch />
-        <MarqueeSlider />
+        <MarqueeSliderClient />
         <Awards />
         <Testimonials />
         <MarqueeSection2 />
