@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -27,6 +27,7 @@ export default function VelocityMarquee({
 }: VelocityMarqueeProps) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   // ✅ left should be NEGATIVE, right should be POSITIVE
   const dirDelta = useMemo(
@@ -34,8 +35,13 @@ export default function VelocityMarquee({
     [direction]
   );
 
-  useLayoutEffect(() => {
-    if (typeof window === "undefined") return;
+  // Handle hydration - only render duplicated children after mount
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !isMounted) return;
 
     const wrap = wrapRef.current;
     const track = trackRef.current;
@@ -71,8 +77,12 @@ export default function VelocityMarquee({
         end: "max",
         onUpdate(self) {
           const scale = clamp(Math.abs(self.getVelocity() / 200));
-          master!.timeScale(scale);
-          kicker!.invalidate().restart();
+          if (master) {
+            master.timeScale(scale);
+          }
+          if (kicker) {
+            kicker.invalidate().restart();
+          }
         },
       });
 
@@ -96,11 +106,10 @@ export default function VelocityMarquee({
       master?.kill();
       ctx.revert();
     };
-  }, [dirDelta, direction, duration, minScale, maxScale, pauseOnHover]);
+  }, [dirDelta, direction, duration, minScale, maxScale, pauseOnHover, isMounted]);
 
   return (
     <div ref={wrapRef} className={className} style={{ overflow: "hidden" }}>
-      {/* 🚫 remove direction-specific CSS class */}
       <div
         ref={trackRef}
         className="marquee-flex"
@@ -111,7 +120,7 @@ export default function VelocityMarquee({
         }}
       >
         {children}
-        {children}
+        {isMounted && children}
       </div>
     </div>
   );
