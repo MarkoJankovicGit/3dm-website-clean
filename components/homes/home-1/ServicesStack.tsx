@@ -124,30 +124,25 @@ export default function ServicesStack() {
                 </div>
                 <div className="mxd-services-stack__title width-60">
                   <h3>
-                    Brand
+                    AI Learning
                     <br />
-                    identity
+                    Systems
                   </h3>
                 </div>
                 <div className="mxd-services-stack__info width-60">
                   <div className="mxd-services-cards__tags">
                     <span className="tag tag-default tag-outline">
-                      Brand strategy
+                      Microlearning
                     </span>
                     <span className="tag tag-default tag-outline">
-                      Logo design
+                      Gamification
                     </span>
                     <span className="tag tag-default tag-outline">
-                      Guidelines
-                    </span>
-                    <span className="tag tag-default tag-outline">
-                      Rebranding
+                      LMS
                     </span>
                   </div>
                   <p className="t-small-mobile">
-                    From logo design to comprehensive brand strategies, we
-                    ensure your business stands out with a unique visual
-                    identity and consistent messaging across all touchpoints.
+                    We build AI-powered learning platforms that transform any content into engaging microlearning experiences — faster onboarding, higher retention.
                   </p>
                 </div>
                 <div className="services-stack__image">
