@@ -11,11 +11,12 @@
     },
     {
       "id": 2,
-      "title": "Interactive concept",
-      "description": "powered by AI",
+      "title": "DevQuest",
+      "description": "— Learn to Code Through Epic Quests",
+      "link": "https://www.memoized.dev/",
       "previewClass": "preview-image-2",
-      "videoSrc": "/video/devquest-demo.mp4",
-      "tags": ["Sora", "AI", "Editorial"],
+      "imageSrc": "/img/illustrations/devquest-mockup.png",
+      "tags": ["RPG Learning", "AI", "System Design"],
       "anim": "anim-uni-in-up"
     },
     {
