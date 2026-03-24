@@ -72,30 +72,25 @@ export default function ServicesStack() {
                 </div>
                 <div className="mxd-services-stack__title width-60">
                   <h3 className="opposite">
-                    Creative
+                    AI Content
                     <br />
-                    development
+                    Automation
                   </h3>
                 </div>
                 <div className="mxd-services-stack__info width-60">
                   <div className="mxd-services-cards__tags">
                     <span className="tag tag-default tag-outline-opposite">
-                      Frontend
+                      Video
                     </span>
                     <span className="tag tag-default tag-outline-opposite">
-                      Interactions
+                      Voice
                     </span>
                     <span className="tag tag-default tag-outline-opposite">
-                      Backend
-                    </span>
-                    <span className="tag tag-default tag-outline-opposite">
-                      Mobile Apps
+                      Workflows
                     </span>
                   </div>
                   <p className="t-small-mobile t-opposite">
-                    We build high-performance websites and applications using
-                    modern technologies. Our solutions are designed to be
-                    scalable and functional for optimal performance.
+                    We build custom AI content pipelines that produce studio-quality videos, posts and campaigns at scale — without a full production team.
                   </p>
                 </div>
                 <div className="services-stack__image">
