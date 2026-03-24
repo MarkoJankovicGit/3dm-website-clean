@@ -2,27 +2,27 @@
   {
     "title": "Research first, build fast",
     "description": "Every idea starts with genuine curiosity — we study the space, look for what's missing, then move immediately. No endless planning.",
-    "icon": "/img/icons/h70_appr-01.webp"
+    "icon": "/img/icons/appr-01.webp"
   },
   {
     "title": "Solve small things brilliantly",
     "description": "AI won't fix everything. But it can make one hard thing effortless. We chase that — not the hype, not the headlines.",
-    "icon": "/img/icons/h70_appr-02.webp"
+    "icon": "/img/icons/appr-02.webp"
   },
   {
     "title": "Innovation is always worth it",
     "description": "If it simplifies something complex, it's worth building. The world is full of broken processes waiting for a smarter solution.",
-    "icon": "/img/icons/h70_appr-03.webp"
+    "icon": "/img/icons/appr-03.webp"
   },
   {
     "title": "Validate early, validate fast",
     "description": "A great product is one users confirm in the market — not one we fall in love with in a doc. Real signal beats internal conviction every time.",
-    "icon": "/img/icons/h70_appr-04.webp"
+    "icon": "/img/icons/appr-04.webp"
   },
   {
     "title": "Own your stack, own your future",
     "description": "Most AI products collapse because they're built on top of expensive commercial models with no exit. We build lean, independent, and sustainable from day one.",
-    "icon": "/img/icons/h70_appr-05.webp"
+    "icon": "/img/icons/appr-05.webp"
   }
 ]
 }
