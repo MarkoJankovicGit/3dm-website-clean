@@ -41,11 +41,12 @@
     },
     {
       "id": 5,
-      "title": "Illustrations set",
-      "description": "for digital and print use.",
+      "title": "OpenMarket",
+      "description": "— Your AI Shopping Assistant — Compare prices across all major retailers, plan meals by budget, and let AI optimize your entire shopping basket. Localized for Southeast Europe — stop browsing, let OpenMarket decide where to buy.",
+      "link": "https://openmarket-gamma.vercel.app/",
       "previewClass": "preview-image-5",
       "imageSrc": "/img/illustrations/openmarket-mockup.png",
-      "tags": ["Illustrations", "Design", "Packaging"],
+      "tags": ["AI Shopping", "Retail Tech", "Southeast Europe"],
       "anim": "anim-uni-in-up"
     },
     {
