@@ -134,20 +134,32 @@
 
 /* Featured Projects — 20% taller image preview on mobile only */
 @media (max-width: 767px) {
-  /* Media container needs position relative for absolute tags */
+  /* mxd-project-item stacks naturally: media block on top, promo text below */
+  .mxd-project-item {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 3rem !important;
+  }
+
+  /* Media (Link) is a fixed-height block — contains image + tags overlay */
   .mxd-project-item__media {
     position: relative !important;
     display: block !important;
+    height: 552px !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
   }
 
-  /* Taller preview container */
+  /* Preview fills the media container completely */
   .mxd-project-item__preview {
-    height: 552px !important;
-    position: relative !important;
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
     overflow: hidden !important;
   }
 
-  /* Tags pinned to bottom of the media container (over the image) */
+  /* Tags pinned to bottom of the media container, overlaid on image */
   .mxd-project-item__tags {
     position: absolute !important;
     bottom: 0 !important;
@@ -158,19 +170,15 @@
     flex-wrap: wrap !important;
     gap: 0.5rem !important;
     padding: 1.5rem !important;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%) !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%) !important;
+    margin: 0 !important;
   }
 
-  /* Text block (promo) sits fully below the image with proper spacing */
+  /* Promo text sits fully below the media block, no overlap */
   .mxd-project-item__promo {
-    position: relative !important;
-    margin-top: 1rem !important;
+    position: static !important;
+    margin-top: 1.25rem !important;
     padding-top: 0 !important;
-  }
-
-  /* Ensure project item has no overlap */
-  .mxd-project-item {
-    margin-bottom: 2rem !important;
   }
 }
 
