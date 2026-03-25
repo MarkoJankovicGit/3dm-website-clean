@@ -132,10 +132,32 @@
   background-color: #fff !important;
 }
 
-/* Featured Projects — 20% taller image preview on mobile */
+/* Featured Projects — 20% taller image preview on mobile only */
 @media (max-width: 767px) {
+  /* Taller preview container */
   .mxd-project-item__preview {
     height: 552px !important;
+    position: relative !important;
+  }
+
+  /* Tags pinned to bottom of the preview image */
+  .mxd-project-item__tags {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: flex-end !important;
+    padding: 2rem !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%) !important;
+  }
+
+  /* Info/text block sits fully below the preview, no overlap */
+  .mxd-project-item__info {
+    position: relative !important;
+    margin-top: 0 !important;
+    padding-top: 1.5rem !important;
   }
 }
 
