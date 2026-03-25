@@ -3,6 +3,7 @@
 import {
   useEffect,
   useRef,
+  useState,
   Children,
   isValidElement,
 } from "react";
@@ -33,10 +34,25 @@ export default function StackCards({
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const offsetRef = useRef<HTMLDivElement | null>(null);
   const itemRefs = useRef<HTMLElement[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile on mount
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Changed from useLayoutEffect to useEffect
   useEffect(() => {
     if (typeof window === "undefined") return;
+    
+    // On mobile, disable the stacking animation — let cards flow naturally
+    if (isMobile) return;
+
     const wrapper = wrapperRef.current;
     const offsetEl = offsetRef.current;
 
@@ -91,7 +107,7 @@ export default function StackCards({
       tl?.kill();
       ctx.revert();
     };
-  }, [pin, scrub, durationMul, children]);
+  }, [pin, scrub, durationMul, children, isMobile]);
 
   useEffect(() => {
     const onLoad = () => {
@@ -113,7 +129,7 @@ export default function StackCards({
           if (el) itemRefs.current[index] = el;
         }}
         className="stack-item"
-        style={{ willChange: "transform" }}
+        style={{ willChange: isMobile ? "auto" : "transform" }}
       >
         {content}
       </div>
