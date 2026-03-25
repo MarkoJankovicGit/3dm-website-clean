@@ -158,7 +158,7 @@ export default function Testimonials() {
                     ))}
 
                     {/* navigation buttons */}
-                    <div className="swiper-button-prev mxd-slider-btn mxd-slider-btn-round-prev animate-card-2">
+                    <div className="swiper-button-prev mxd-slider-btn mxd-slider-btn-round-prev">
                       <a
                         className="btn btn-round btn-round-small btn-outline slide-left anim-no-delay"
                         href="#"
@@ -166,7 +166,7 @@ export default function Testimonials() {
                         <i className="ph ph-arrow-left" />
                       </a>
                     </div>
-                    <div className="swiper-button-next mxd-slider-btn mxd-slider-btn-round-next animate-card-2">
+                    <div className="swiper-button-next mxd-slider-btn mxd-slider-btn-round-next">
                       <a
                         className="btn btn-round btn-round-small btn-outline slide-right anim-no-delay"
                         href="#"

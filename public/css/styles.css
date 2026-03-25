@@ -96,6 +96,17 @@
 .swiper-navigation-icon {
   display: none;
 }
+
+/* Testimonials slider — navigation arrows always visible, no animation */
+.swiper-testimonials .mxd-slider-btn,
+.swiper-testimonials .swiper-button-prev,
+.swiper-testimonials .swiper-button-next {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: all !important;
+  transition: none !important;
+  animation: none !important;
+}
 .hamburger__line {
   transition: all 0.3s ease;
 }
