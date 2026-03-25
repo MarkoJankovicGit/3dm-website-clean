@@ -134,30 +134,43 @@
 
 /* Featured Projects — 20% taller image preview on mobile only */
 @media (max-width: 767px) {
+  /* Media container needs position relative for absolute tags */
+  .mxd-project-item__media {
+    position: relative !important;
+    display: block !important;
+  }
+
   /* Taller preview container */
   .mxd-project-item__preview {
     height: 552px !important;
     position: relative !important;
+    overflow: hidden !important;
   }
 
-  /* Tags pinned to bottom of the preview image */
+  /* Tags pinned to bottom of the media container (over the image) */
   .mxd-project-item__tags {
     position: absolute !important;
     bottom: 0 !important;
     left: 0 !important;
-    width: 100% !important;
+    right: 0 !important;
+    z-index: 10 !important;
     display: flex !important;
     flex-wrap: wrap !important;
-    align-items: flex-end !important;
-    padding: 2rem !important;
-    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%) !important;
+    gap: 0.5rem !important;
+    padding: 1.5rem !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%) !important;
   }
 
-  /* Info/text block sits fully below the preview, no overlap */
-  .mxd-project-item__info {
+  /* Text block (promo) sits fully below the image with proper spacing */
+  .mxd-project-item__promo {
     position: relative !important;
-    margin-top: 0 !important;
-    padding-top: 1.5rem !important;
+    margin-top: 1rem !important;
+    padding-top: 0 !important;
+  }
+
+  /* Ensure project item has no overlap */
+  .mxd-project-item {
+    margin-bottom: 2rem !important;
   }
 }
 
