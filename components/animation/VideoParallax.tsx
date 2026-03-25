@@ -1,17 +1,16 @@
 "use client";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-// Tip: if SSR complains, use the dynamic import version shown below.
 import Ukiyo from "ukiyojs";
 
 type UkiyoBgProps = {
-  className?: string; // your class with background-image
-  scale?: number; // default 1.2
-  speed?: number; // default 1.5
-  willChange?: boolean; // default true
-  src?: string; // optional ukiyo wrapper class
-  poster?: string; // optional ukiyo wrapper class
-  wrapperClass?: string; // optional ukiyo wrapper class
+  className?: string;
+  scale?: number;
+  speed?: number;
+  willChange?: boolean;
+  src?: string;
+  poster?: string;
+  wrapperClass?: string;
 };
 
 const VideoParallax = ({
@@ -25,16 +24,16 @@ const VideoParallax = ({
 }: UkiyoBgProps) => {
   const elRef = useRef<HTMLVideoElement | null>(null);
 
-  useLayoutEffect(() => {
+  // Changed from useLayoutEffect to useEffect to fix hydration error
+  useEffect(() => {
     if (!elRef.current) return;
 
-    // Create instance
     const instance = new Ukiyo(elRef.current, {
       scale,
       speed,
       willChange,
       wrapperClass,
-      externalRAF: true, // we’ll drive it with GSAP’s ticker
+      externalRAF: true,
     });
 
     const tick = () => instance.animate();
@@ -56,7 +55,8 @@ const VideoParallax = ({
       poster={poster}
       ref={elRef}
       className={className}
-    ></video>
+      suppressHydrationWarning
+    />
   );
 };
 

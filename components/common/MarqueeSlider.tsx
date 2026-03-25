@@ -22,11 +22,6 @@ export default function MarqueeSlider() {
                       src={item.src}
                       width={1200}
                       height={1000}
-                      unoptimized={item.src.endsWith(".png")}
-                      priority={false}
-                      onError={(e) => {
-                        console.log("[v0] Image failed to load:", item.src);
-                      }}
                     />
                   </Link>
                 </div>
