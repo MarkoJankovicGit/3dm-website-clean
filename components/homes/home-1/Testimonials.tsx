@@ -26,17 +26,14 @@ export default function Testimonials() {
                           <div className="col-12 mxd-grid-item no-margin">
                             <div className="mxd-section-title__title anim-uni-in-up">
                               <RevealText as="h2" className="reveal-type">
-                                What our clients say
+                                What our partners say
                               </RevealText>
                             </div>
                           </div>
                           <div className="col-12 mxd-grid-item no-margin">
                             <div className="mxd-section-title__descr">
                               <p className="anim-uni-in-up">
-                                We&apos;re more than just executors — we&apos;re
-                                your creative partners. Don&apos;t just take our
-                                word for it, see what clients have to say about
-                                working with us.
+                                We build products, grow communities, and figure out distribution. Here&apos;s what our partners say about working with us.
                               </p>
                             </div>
                           </div>
