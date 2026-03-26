@@ -131,9 +131,10 @@ export default function Testimonials() {
                             <div className="mxd-testimonials-card__text">
                               <p className="anim-uni-in-up">{item.text}</p>
                               <AnimatedButton
-                                text="Project Page"
+                                text={item.buttonLabel || "Project Page"}
                                 className="btn btn-anim btn-default btn-small btn-outline slide-right-up anim-uni-in-up"
                                 href={item.projectPage}
+                                target={item.projectPage.startsWith("http") ? "_blank" : undefined}
                               >
                                 <i className="ph ph-arrow-up-right" />
                               </AnimatedButton>
