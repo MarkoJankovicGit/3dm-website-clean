@@ -51,11 +51,12 @@
     "companyLogo": "/img/brands/envato.svg",
     "companyLogoWidth": 700,
     "companyLogoHeight": 169,
-    "text": "Working with Rayo team was an absolute pleasure! They took the time to understand our business needs and translated them into a beautifully designed, user-friendly website.",
-    "projectPage": "#",
-    "authorName": "John Lemon",
-    "authorPosition": "Brand Manager in",
-    "authorCompany": "Instant Design",
+    "text": "3DM was easy to work with from the start. They understood the direction quickly and helped us turn ideas into clean, scalable AI content without making it complicated.",
+    "projectPage": "https://app.emergent.sh/landing/",
+    "buttonLabel": "About",
+    "authorName": "Business Development Team",
+    "authorPosition": "Emergent",
+    "authorCompany": "",
     "authorCompanyUrl": "#"
   }
 ]
