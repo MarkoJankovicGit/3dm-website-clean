@@ -93,6 +93,37 @@
   aspect-ratio: 16 / 9; /* modern browsers */
   position: relative;
 }
+/* Testimonials card — increased height for longer quotes */
+@media (min-width: 768px) {
+  .mxd-testimonials-card {
+    height: 680px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .mxd-testimonials-card {
+    height: 720px !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .mxd-testimonials-card {
+    height: 780px !important;
+  }
+}
+
+/* Reduce content gap slightly for better fit */
+@media (min-width: 768px) {
+  .mxd-testimonials-card__content {
+    gap: 3.5rem !important;
+  }
+}
+
+/* Adjust text paragraph margin */
+.mxd-testimonials-card__text p {
+  margin-bottom: 2.5rem !important;
+}
+
 .swiper-navigation-icon {
   display: none;
 }
