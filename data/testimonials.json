@@ -58,5 +58,34 @@
     "authorPosition": "Emergent",
     "authorCompany": "",
     "authorCompanyUrl": "#"
+  },
+  {
+    "authorPhoto": "/img/avatars/300x300_ava-02.webp",
+    "authorPhotoWidth": 300,
+    "authorPhotoHeight": 300,
+    "companyLogo": "/img/brands/envato.svg",
+    "companyLogoWidth": 700,
+    "companyLogoHeight": 169,
+    "text": "They used their community to push things forward much faster than we expected. Within days, we had AI-generated promo content live and started seeing more people coming in.",
+    "projectPage": "https://www.cloudways.com/en",
+    "buttonLabel": "About",
+    "authorName": "Marketing Growth Team",
+    "authorPosition": "Cloudways",
+    "authorCompany": "",
+    "authorCompanyUrl": "#"
+  },
+  {
+    "authorPhoto": "/img/avatars/300x300_ava-01.webp",
+    "authorPhotoWidth": 300,
+    "authorPhotoHeight": 300,
+    "companyLogo": "/img/brands/envato.svg",
+    "companyLogoWidth": 700,
+    "companyLogoHeight": 169,
+    "text": "The team's attention to detail, creativity, and technical expertise exceeded our expectations. We've received so much positive feedback from our customers already.",
+    "projectPage": "#",
+    "authorName": "Your Name",
+    "authorPosition": "Your Title",
+    "authorCompany": "",
+    "authorCompanyUrl": "#"
   }
 ]
