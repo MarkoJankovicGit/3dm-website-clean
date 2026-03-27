@@ -1,21 +1,12 @@
-import Blogs from "@/components/common/Blogs";
-import Cta from "@/components/common/Cta";
-import Footer2 from "@/components/footers/Footer2";
-
-import About from "@/components/homes/home-1/About";
-import Approch from "@/components/common/Approch";
-
-import Devider from "@/components/homes/home-1/Devider";
-import Facts from "@/components/common/Facts";
-import Hero from "@/components/homes/home-1/Hero";
-import Marquee from "@/components/homes/home-1/Marquee";
-import MarqueeSection2 from "@/components/homes/home-1/MarqueeSection2";
-import MarqueeSliderClient from "@/components/common/MarqueeSliderClient";
-import Partners from "@/components/homes/home-1/Partners";
-import Projects from "@/components/homes/home-1/Projects";
-import ServicesStack from "@/components/homes/home-1/ServicesStack";
-import Testimonials from "@/components/homes/home-1/Testimonials";
+import dynamic from "next/dynamic";
 import { Metadata } from "next";
+
+// Dynamic import with ssr: false prevents hydration errors permanently
+// Even if this file is edited, the client-side only rendering is enforced
+const HomeContent = dynamic(
+  () => import("@/components/homes/home-1/HomeContent"),
+  { ssr: false }
+);
 
 export const metadata: Metadata = {
   title: "3DM - AI Product Studio",
@@ -23,25 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return (
-    <>
-      <main id="mxd-page-content" className="mxd-page-content">
-        <Hero />
-        <Devider />
-        <About />
-        <Facts />
-        <Marquee />
-        <Projects />
-        <ServicesStack />
-        <Approch />
-        <MarqueeSliderClient />
-        <Testimonials />
-        <MarqueeSection2 />
-        <Partners />
-        <Blogs />
-        <Cta />
-      </main>
-      <Footer2 />
-    </>
-  );
+  return <HomeContent />;
 }
