@@ -1,18 +1,27 @@
-import dynamic from "next/dynamic";
-import { Metadata } from "next";
+"use client";
 
-// Dynamic import with ssr: false prevents hydration errors permanently
-// Even if this file is edited, the client-side only rendering is enforced
-const HomeContent = dynamic(
-  () => import("@/components/homes/home-1/HomeContent"),
-  { ssr: false }
-);
-
-export const metadata: Metadata = {
-  title: "3DM - AI Product Studio",
-  description: "We are an AI product studio, we build, launch and scale AI-powered products and communities.",
-};
+import Hero from "@/components/homes/home-1/Hero";
+import Partners from "@/components/homes/home-1/Partners";
+import About from "@/components/homes/home-1/About";
+import ServicesStack from "@/components/homes/home-1/ServicesStack";
+import Marquee from "@/components/homes/home-1/Marquee";
+import Projects from "@/components/homes/home-1/Projects";
+import MarqueeSection2 from "@/components/homes/home-1/MarqueeSection2";
+import Testimonials from "@/components/homes/home-1/Testimonials";
+import Devider from "@/components/homes/home-1/Devider";
 
 export default function Home() {
-  return <HomeContent />;
+  return (
+    <>
+      <Hero />
+      <Partners />
+      <About />
+      <ServicesStack />
+      <Marquee />
+      <Projects />
+      <MarqueeSection2 />
+      <Testimonials />
+      <Devider />
+    </>
+  );
 }
