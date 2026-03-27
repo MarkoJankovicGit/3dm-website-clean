@@ -9,11 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function LenisSmoothScrollInner() {
   const lenis = useLenis();
-  const [mounted, setMounted] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     setIsIOS(/iPad|iPhone|iPod/.test(navigator.userAgent));
   }, []);
 
@@ -42,8 +40,6 @@ export default function LenisSmoothScrollInner() {
     };
   }, [lenis, isIOS]);
 
-  // Don't render anything until mounted to avoid hydration mismatch
-  if (!mounted) return null;
   if (isIOS) return null;
   return <ReactLenis root />;
 }
