@@ -8,8 +8,6 @@ import Marquee from "@/components/homes/home-1/Marquee";
 import Projects from "@/components/homes/home-1/Projects";
 import MarqueeSection2 from "@/components/homes/home-1/MarqueeSection2";
 import Testimonials from "@/components/homes/home-1/Testimonials";
-import Cta from "@/components/common/Cta";
-import ContactForm from "@/components/other-pages/contact/ContactForm";
 import Devider from "@/components/homes/home-1/Devider";
 
 export default function Home() {
@@ -23,8 +21,6 @@ export default function Home() {
       <Projects />
       <MarqueeSection2 />
       <Testimonials />
-      <Cta />
-      <ContactForm />
       <Devider />
     </>
   );
