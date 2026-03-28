@@ -1,3 +1,5 @@
+'use client';
+
 import Blogs from "@/components/common/Blogs";
 import Cta from "@/components/common/Cta";
 import Footer2 from "@/components/footers/Footer2";
@@ -15,12 +17,6 @@ import Partners from "@/components/homes/home-1/Partners";
 import Projects from "@/components/homes/home-1/Projects";
 import ServicesStack from "@/components/homes/home-1/ServicesStack";
 import Testimonials from "@/components/homes/home-1/Testimonials";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "3DM - AI Product Studio",
-  description: "We are an AI product studio, we build, launch and scale AI-powered products and communities.",
-};
 
 export default function Home() {
   return (
